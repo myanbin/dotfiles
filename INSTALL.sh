@@ -4,15 +4,25 @@ RED="$(tput setaf 1)"
 GREEN="$(tput setaf 2)"
 YELLOW="$(tput setaf 3)"
 BLUE="$(tput setaf 4)"
-
 NORMAL="$(tput sgr0)"
-BOLD="$(tput bold)"
 
-git clone --depth=1 https://github.com/myanbin/dotfiles.git $HOME/.dotfiles || {
+
+# Checking the environment and download dotfiles
+
+if [ -d $HOME/.dotfiles ]; then
+	echo "${YELLOW}You already have dotfiles installed.${NORMAL}"
+	echo "Please remove $HOME/.dotfiles if you want to re-install."
+	exit
+fi
+
+echo "${BLUE}Cloning dotfiles...${NORMAL}"
+git clone --quiet --depth=1 https://github.com/myanbin/dotfiles.git $HOME/.dotfiles || {
 	echo "${RED}error: git clone failed${NORMAL}"
 	exit 1
 }
 
+
+# Creating the symbolic link
 
 function main() {
 	declare -a FILES=(
@@ -26,7 +36,7 @@ function main() {
 		targetFile="$HOME/$file"
 		ln -sf $sourceFile $targetFile
 
-		printf "${GREEN}\t$targetFile → $sourceFile${NORMAL}\n"
+		printf "${GREEN}\t$targetFile\t → $sourceFile${NORMAL}\n"
 	done
 
 	echo ""
@@ -41,6 +51,6 @@ else
 	if [[ $REPLY =~ ^[Yy]$ ]]; then
 		main;
 	fi;
-fi;
+fi
 
-unset main;
+unset main
