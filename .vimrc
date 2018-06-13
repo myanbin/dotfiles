@@ -35,7 +35,7 @@ syntax on
 " Make tabs as wide as four spaces
 set tabstop=4
 " Show “invisible” characters
-set lcs=tab:▸\ ,trail:·,eol:¬,nbsp:_
+set listchars=tab:▸\ ,trail:·,eol:¬,nbsp:_
 set list
 " Highlight searches
 set hlsearch
@@ -74,6 +74,7 @@ set scrolloff=3
 set nostartofline
 
 
+" Trim extra whitespace
 function! StripTrailingWhitespace()
 	let save_cursor = getpos(".")
 	let save_search = getreg('/')
@@ -82,12 +83,18 @@ function! StripTrailingWhitespace()
 	call setreg('/', save_search)
 endfunction
 
+" Toggle “invisible” characters
+function! ToggleInvisibles()
+	set nolist!
+endfunction
 
 " Change mapleader
 let mapleader=","
 
 " Strip trailing whitespace (,ss)
 noremap <leader>ss :call StripTrailingWhitespace()<cr>
+" Toggle “invisible” characters (,v)
+noremap <leader>v :call ToggleInvisibles()<cr>
 " Save a file as root (,W)
 noremap <leader>W :w !sudo tee % > /dev/null<cr>
 
