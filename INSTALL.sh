@@ -25,19 +25,24 @@ git clone --quiet --depth=1 https://github.com/myanbin/dotfiles.git $HOME/.dotfi
 # Creating the symbolic link
 
 function main() {
-	declare -a FILES=(
+	declare -a SYMLINK_FILES=(
 		".gitconfig"
 		".vimrc"
 	)
 
 	echo "Creating symbolic link"
-	for file in "${FILES[@]}"; do
+	for file in "${SYMLINK_FILES[@]}"; do
 		sourceFile="$HOME/.dotfiles/$file"
 		targetFile="$HOME/$file"
 		ln -sf $sourceFile $targetFile
 
 		printf "${GREEN}\t$targetFile\t → $sourceFile${NORMAL}\n"
 	done
+	if [ ! -f $HOME/.gitconfig.local ]; then
+		echo "Creating local conf"
+		cp -f $HOME/.dotfiles/.gitconfig.local $HOME/.gitconfig.local
+		printf "${GREEN}\t$HOME/.gitconfig.local${NORMAL}\n"
+	fi
 
 	echo ""
 	echo "dotfiles now is installed!";
