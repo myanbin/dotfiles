@@ -1,28 +1,30 @@
 [alias]
 
-	a   = add
-	b   = branch
-	ba  = branch -a
-	c   = commit
-	ca  = !git add -A && git commit             # Commit all changes.
-	cam = commit --amend
-	co  = checkout
-	d   = diff                                  # Show a line diff
-	dc  = diff --cached
-	ds  = diff --stat
-	dw  = diff --color-words                    # Show a word diff instead a line
-	f   = fetch
-	g   = log --graph --pretty=custom           # Show custom graph.
-	git = !exec git                             # Allow `$ git git git...`
-	l   = log --pretty=basic                    # Show basic log. (oneline)
-	ll  = log --pretty=intermediate --stat      # Show intermediate log.
-	lll = log --pretty=intermediate --stat -p   # Show advanced log.
-	new = checkout -b                           # Create a new branch.
-	p   = push
-	s   = status
-	sh  = show
-	w   = instaweb --httpd=webrick              # Start web-based visualizer.
-	who = shortlog --no-merges --email --numbered --summary # List contributors.
+	a    = add
+	aa   = add -A                                # Stage all changes.
+	b    = branch
+	ba   = branch -a
+	c    = commit
+	ca   = !git add -A && git commit             # Commit all changes.
+	cam  = commit --amend
+	co   = checkout
+	d    = diff                                  # Show a line diff
+	dc   = diff --cached
+	ds   = diff --stat
+	dw   = diff --color-words                    # Show a word diff instead a line
+	f    = fetch
+	g    = log --graph --pretty=basic            # Show basic graph.
+	git  = !exec git                             # Allow `$ git git git...`
+	l    = log --pretty=basic                    # Show basic log. (oneline)
+	ll   = log --pretty=intermediate --stat      # Show intermediate log.
+	lll  = log --pretty=intermediate --stat -p   # Show advanced log.
+	new  = checkout -b                           # Create a new branch.
+	p    = push
+	pick = cherry-pick
+	s    = status
+	sh   = show
+	w    = instaweb --httpd=webrick              # Start web-based visualizer.
+	who  = shortlog --no-merges --email --numbered --summary # List contributors.
 
 [color]
 
