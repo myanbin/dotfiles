@@ -16,8 +16,8 @@ Before using, pelease check `~/.gitconfig.local` file to make sure the user info
 ```
 [user]
 
-	name = Your name
-	email = youremail@exmaple.com
+	name = YOUR_NAME
+	email = YOUR_EMAIL@exmaple.com
 ```
 
 ## License
