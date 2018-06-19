@@ -24,7 +24,7 @@ git clone --quiet --depth=1 https://github.com/myanbin/dotfiles.git $HOME/.dotfi
 
 # Creating the symbolic link
 
-function main() {
+function main {
 	declare -a SYMLINK_FILES=(
 		".gitconfig"
 		".vimrc"
