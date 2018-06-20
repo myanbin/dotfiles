@@ -1,6 +1,8 @@
 # dotfiles
 My dotfiles for Linux, macOS
 
+![screenshot](https://user-images.githubusercontent.com/2127462/41633711-bb03e616-7472-11e8-9994-853a2cd409cf.jpg)
+
 ## Install
 
 Run following command in your terminal.
