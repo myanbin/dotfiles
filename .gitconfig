@@ -8,8 +8,9 @@
 	ca   = !git add -A && git commit             # Commit all changes.
 	cam  = commit --amend
 	co   = checkout
-	d    = diff                                  # Show a line diff
-	dc   = diff --cached
+	d    = diff                                  # Diff unstaged changes
+	da   = diff HEAD                             # Diff unstaged and staged changes
+	dc   = diff --cached                         # Diff staged changes
 	ds   = diff --stat
 	dw   = diff --color-words                    # Show a word diff instead a line
 	f    = fetch
@@ -19,7 +20,7 @@
 	ll   = log --pretty=intermediate --stat      # Show intermediate log.
 	lll  = log --pretty=intermediate --stat -p   # Show advanced log.
 	new  = checkout -b                           # Create a new branch.
-	p    = push
+	p    = pull
 	pick = cherry-pick
 	s    = status
 	sh   = show
@@ -52,6 +53,7 @@
 [color "status"]
 
 	added = green reverse
+	branch = cyan bold
 	changed = yellow reverse
 	untracked = red reverse
 
@@ -94,6 +96,11 @@
 	#                           │            │        └─ decorations (branch, heads or tags)
 	#                           │            └─ parent hashes (abbreviated)
 	#                           └─ hash (abbreviated)
+
+[pull]
+	# Only fast-forward merges are allowed
+
+	ff = only
 
 [push]
 
