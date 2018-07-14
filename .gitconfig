@@ -2,8 +2,8 @@
 
 	a    = add
 	aa   = add -A                                # Stage all changes.
-	b    = branch
-	ba   = branch -a
+	b    = branch -v                             # Shorthand for branch (verbose)
+	ba   = branch -av
 	c    = commit
 	ca   = !git add -A && git commit             # Commit all changes.
 	cam  = commit --amend
@@ -16,16 +16,19 @@
 	f    = fetch
 	g    = log --graph --pretty=basic            # Show basic graph.
 	git  = !exec git                             # Allow `$ git git git...`
+	h    = help                                  # Shorthand for help
 	l    = log --pretty=basic                    # Show basic log. (oneline)
 	ll   = log --pretty=intermediate --stat      # Show intermediate log.
 	lll  = log --pretty=intermediate --stat -p   # Show advanced log.
 	new  = checkout -b                           # Create a new branch.
 	p    = pull
 	pick = cherry-pick
+	r    = remote -v                             # Shorthand for remote (verbose)
 	s    = status
 	sh   = show
+	ss   = stash                                 # Stash all changes
 	w    = instaweb --httpd=webrick              # Start web-based visualizer.
-	who  = shortlog --no-merges --email --numbered --summary # List contributors.
+	who  = shortlog --no-merges --email --numbered --summary
 
 [color]
 
