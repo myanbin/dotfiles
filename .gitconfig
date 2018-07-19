@@ -2,6 +2,7 @@
 
 	a    = add
 	aa   = add -A                                # Stage all changes.
+	ap   = add -p                                # Stage changes chunk by chunk
 	b    = branch -v                             # Shorthand for branch (verbose)
 	ba   = branch -av
 	c    = commit
@@ -24,10 +25,12 @@
 	p    = pull
 	pick = cherry-pick
 	r    = remote -v                             # Shorthand for remote (verbose)
+	rc   = rebase --continue
+	rs   = rebase --skip
 	s    = status
 	sh   = show
+	sl   = stash list                            # Stash list
 	ss   = stash                                 # Stash all changes
-	w    = instaweb --httpd=webrick              # Start web-based visualizer.
 	who  = shortlog --no-merges --email --numbered --summary
 
 [color]
