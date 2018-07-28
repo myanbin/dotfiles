@@ -27,6 +27,7 @@ git clone --quiet --depth=1 https://github.com/myanbin/dotfiles.git $HOME/.dotfi
 function main {
 	declare -a SYMLINK_FILES=(
 		".gitconfig"
+		".tmux.conf"
 		".vimrc"
 	)
 
