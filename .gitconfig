@@ -14,15 +14,17 @@
 	dc   = diff --cached                         # Diff staged changes
 	ds   = diff --stat
 	dw   = diff --color-words                    # Show a word diff instead a line
+	dump = cat-file -p                           # Show content of git object
 	f    = fetch
 	# Find commits by commit message
 	find = "!f() { git log --pretty=basic --name-status --grep=$1; }; f"
 	g    = log --graph --pretty=basic            # Show basic graph.
 	git  = !exec git                             # Allow `$ git git git...`
 	h    = help                                  # Shorthand for help
+	hi   = !echo 'hello, welcome to use myanbin/dotfiles'
 	l    = log --pretty=basic                    # Show basic log. (oneline)
 	ll   = log --pretty=intermediate --stat      # Show intermediate log.
-	lll  = log --pretty=intermediate --stat -p   # Show advanced log.
+	m    = merge
 	new  = checkout -b                           # Create a new branch.
 	p    = pull
 	pick = cherry-pick
@@ -34,6 +36,7 @@
 	sl   = stash list                            # Stash list
 	sp   = stash pop                             # Pop the top changes from stash list
 	ss   = stash                                 # Stash all changes
+	type = cat-file -t                           # Show type of git object
 	undo = reset HEAD~                           # Undo last commit, with files in uncommitted state
 	who  = shortlog --no-merges --email --numbered --summary
 
