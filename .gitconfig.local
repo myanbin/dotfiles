@@ -1,4 +1,7 @@
+[commit]
+	# https://help.github.com/articles/signing-commits/
+	# gpgsign = true
 [user]
-
 	name = YOUR_NAME
 	email = YOUR_EMAIL@example.com
+	# signingkey = YOUR_GPG_FINGERPRINT
