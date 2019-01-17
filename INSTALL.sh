@@ -21,6 +21,7 @@ fi
 function main {
 	declare -a SYMLINK_FILES=(
 		".gitconfig"
+		".gitmessage"
 		".tmux.conf"
 		".vimrc"
 	)

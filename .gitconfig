@@ -35,6 +35,7 @@
 	rs    = rebase --skip
 	s     = status
 	sh    = show
+	ss    = status -sb
 	type  = cat-file -t                           # Show type of git object
 	undo  = reset HEAD~                           # Undo last commit, with files in uncommitted state
 	who   = shortlog --no-merges --email --numbered --summary
@@ -77,6 +78,10 @@
 	autocrlf = input
 	editor = vim
 	excludesfile = ~/.gitignore
+
+[commit]
+
+	template = ~/.gitmessage
 
 [diff]
 
