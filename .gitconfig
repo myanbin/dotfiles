@@ -81,7 +81,7 @@
 
 [commit]
 
-	template = ~/.gitmessage
+	# template = ~/.gitmessage
 
 [diff]
 
